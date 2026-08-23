@@ -1,4 +1,4 @@
-# Homebrew PESUECC website
+# Homebrew EC website
 
 This repository contains Homebrew's website. For the staff members to
 contribute to this repo, please follow the given instructions below to clone
@@ -94,13 +94,12 @@ the "Homebrew Expo" that occurs every week, akin to the actual Homebrew.
 
 ## Who is Homebrew catering to?
 
-The students of PES university, EC campus. As well as every human on earth
-interested in FOSS.
+Anybody who is interested in tech, and being part of a wonderful community filled with people of diverse background! 
 
 ## Why Homebrew?
 
-There's no major FOSS Community in PES, which is somewhat detrimental to the
-FOSS situation on campus. It's necessary to have a bunch of enthusiasts who are
-open about their ideals as well as their software to ensure the free software
+We want to have a bunch of enthusiasts who are
+open about their ideals as well as their software, ensuring that the free software
 and FOSS message gets passed on to future generations.
+We started as a small community in our college and now were branching out as Homebrew to grow this community
 
