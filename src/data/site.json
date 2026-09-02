@@ -1,19 +1,14 @@
 {
-  "name": "Homebrew | HSP PESUECC",
-  "description": "Homebrew is the FOSS Wing of HSP-PESUECC",
+  "name": "Homebrew ",
+  "description": "Homebrew is a FOSS club",
   "url": "https://homebrew.hsp-ec.xyz",
   "author": {
-    "name": "HSP PESUECC",
-    "email": "mail@hsp-ec.xyz",
+    "name": "Homebrew",
+    "email": "homebrewfoss@gmail.com",
     "twitterHandle": "hsp_ecc"
   },
   "defaultSocialImage": "/images/nav-logo.png",
   "headerLinks": [
-    {
-      "text": "HSP",
-      "url": "https://hsp-ec.xyz",
-      "external": true
-    },
     {
       "text": "Blog",
       "url": "/blog",
