@@ -35,7 +35,7 @@ swap in whatever host and port, and you're straight into the chat — no signup,
 
 SSH is normally something you use to do things like run commands on a shell in a remote machine securely with no interception (unlike the case of doing the same over the internet). It is just a protocol for opening an interactive session over an authenticated, encrypted channel.
 
-![Diagram showing an explanation of an ssh connection](https://i.postimg.cc/XvQYCNdD/Screenshot-2026-08-30-191909.png)
+<img src="https://i.postimg.cc/XvQYCNdD/Screenshot-2026-08-30-191909.png" alt="Diagram showing an explanation of an ssh connection" style="max-width: 500px; width: 100%;">
 
 To make this connection, all you'd have to do is enter a command of the form `ssh user@serverhost` where `serverhost` is domain name or IP where the required server is hosted.
 
