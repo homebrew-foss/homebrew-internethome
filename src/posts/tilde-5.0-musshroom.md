@@ -12,7 +12,7 @@ author_link: "https://github.com/homebrew-ec-foss/muSSHroom"
 
 muSSHroom is a chat server directly accessible right in your terminal, with a connection that’s set up using SSH protocol. There's no client to install, no web app to open — just enter the required `ssh` command and you’ll straight up enter a server with many other users along with you to chat with.
 
-![image of the musshroom terminal](https://i.postimg.cc/k4VvH17n/mush2.png)
+![image of the musshroom terminal](https://i.ibb.co/dYNXJ6L/image-2026-09-11-235957039.png)
 
 ### Give it a try
 Once you've either **hosted it locally** or **hosted your own server**, joining is just:
@@ -35,7 +35,7 @@ swap in whatever host and port, and you're straight into the chat — no signup,
 
 SSH is normally something you use to do things like run commands on a shell in a remote machine securely with no interception (unlike the case of doing the same over the internet). It is just a protocol for opening an interactive session over an authenticated, encrypted channel.
 
-<img src="https://i.postimg.cc/sDP0X8f1/2.png" alt="Diagram showing an explanation of an ssh connection" style="max-width: 500px; width: 100%;">
+<img src="https://i.ibb.co/Kxzx7bQv/2.png" alt="Diagram showing an explanation of an ssh connection" style="max-width: 500px; width: 100%;">
 
 To make this connection, all you'd have to do is enter a command of the form `ssh user@serverhost` where `serverhost` is domain name or IP where the required server is hosted.
 
@@ -57,7 +57,7 @@ It works like a loop with unidirectional flow that keeps updating itself based o
 
 This architecture is implemented with three main parts: Model, View and Update 
 
-![Diagram showing the basic elm structure](https://i.postimg.cc/wB0jmxLG/Screenshot-2026-08-30-191915.png)
+![Diagram showing the basic elm structure](https://i.ibb.co/dw0RVYdJ/image-2026-09-11-225112575.png)
 
 
 **Model** is something that stores the current state of your program. For example, in our chat app, every user’s session model contains information about the screen they are on, their user name, their user color etc. This consistently keeps changing via the Update Method.
@@ -92,7 +92,7 @@ And finally in **Week 5**, we added in features to make custom roomnames, delete
 
 ### The Architecture of MuSSHroom : How it works
 	
-![a tldr overview of the architecture](https://i.postimg.cc/5tn2C9LK/Screenshot-2026-08-30-152245.png)
+![a tldr overview of the architecture](https://i.ibb.co/4ZdqP588/Screenshot-2026-08-30-152245.png)
 
 It starts with a plain old SSH client — you running `ssh user@serverhost`. This hits the WISH middleware first, which verifies who you are before letting you into the app.
 
@@ -101,7 +101,7 @@ Once you're in, WISH spins up your own `tea.Program` — every connected user ge
 Type something or run a slash command, and that action hits `update()`. This is the function doing the real work — it talks to the Sessions map, the server's list of who's online and where their `*userSession` lives. Your `tea.Program` checks back into this same map too, like when resolving a `/room user1 user2` command.
 
 
-![diagram showing how "messaging" is processed](https://i.postimg.cc/s2wghf7J/Screenshot-2026-08-30-100926.png)
+![diagram showing how "messaging" is processed](https://i.ibb.co/zHrsHrmB/Screenshot-2026-08-30-100926-Copy.png)
 
 User 1 sends a message, which hits their `bubbletea program UI`. That program iterates through the entire sessions slice — the same map holding every connected user — and broadcasts a `chatMsg` out to each of their programs.
 
