@@ -1,10 +1,10 @@
 ---
 layout: home
-title: 'Homebrew | HSP PESUECC'
+title: 'Homebrew'
 ---
 
-# Homebrew FOSS by HSP PESUECC
+# Homebrew FOSS
 
-Celebrate the Spirit of Free and Open Source Software with Homebrew, PESU ECC's First FOSS Community! 
+Celebrate the Spirit of Free and Open Source Software with Homebrew! 
 
 All are welcome. Click [Here](https://hsp-ec.xyz/discord) to join us!
