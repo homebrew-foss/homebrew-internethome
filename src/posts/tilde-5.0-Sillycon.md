@@ -1,7 +1,7 @@
 ---
 title: "Tilde 5.0 Sillycon: Exploring Silicon Artwork Through RTL"
 date: "2026-11-01"
-tags: [tilde-5.0, summer, mentoring, digitalDesign, rtl, vga-plaground]
+tags: [tilde-5.0, summer, mentoring, digitalDesign, rtl, vga-playground]
 description: Sillycon blog
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team Sillycon"
