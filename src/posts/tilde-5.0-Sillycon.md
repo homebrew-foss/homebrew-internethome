@@ -36,7 +36,6 @@ Verilog source code is available in our repository and can be loaded into the Pl
 their output in real time. The available inputs can then be used to interact with the animations and observe how the 
 hardware logic responds.
 
-<!-- TODO: Add a screenshot of the Tiny Tapeout VGA Playground here. -->
 <img width="1919" height="823" alt="Screenshot 2026-09-29 165650" src="https://github.com/user-attachments/assets/a032792a-6e19-408d-a85f-3f753103f475" />
 
 
@@ -49,7 +48,6 @@ directly by hardware logic rather than by a general-purpose CPU or GPU. We wrote
 which can then be synthesized into hardware logic. The circuit calculates colors for every single pixel on the fly in 
 real time.
 
-<!-- TODO: Add the software-to-hardware graphics pipeline diagram here. -->
 <img width="786" height="499" alt="Screenshot 2026-09-29 172043" src="https://github.com/user-attachments/assets/85551959-73d3-4f5d-93a6-2de999185fbe" />
 
 
@@ -74,7 +72,6 @@ logic the information it needs to decide what should appear at that position. Fo
 -   What should be here? → Use mathematical conditions to generate the required shape or pattern.
 -   What color should it be? → Calculate the RGB values based on the pattern and animation.
 
-<!-- TODO: Add the VGA pixel-generation flow image here. -->
 <img width="681" height="194" alt="Screenshot 2026-09-29 165831" src="https://github.com/user-attachments/assets/58a8dd2c-054c-43b1-a20f-231889f4f273" />
 
 
@@ -87,7 +84,6 @@ patterns, and animations used in Sillycon.
 
 ## The Building Blocks Behind the Graphics
 
-<!-- TODO: Add a visual illustrating the building blocks behind the graphics here. -->
 <img width="464" height="293" alt="Screenshot 2026-11-01 201931" src="https://github.com/user-attachments/assets/74b8aff8-d1b2-4897-ac77-697620cb5117" />
 
 
@@ -148,7 +144,6 @@ constantly updating offset back into our core pattern calculations, the underlyi
 The result is a vibrant visual design that shifts, rotates, and flows smoothly across the display in real time, 
 driven entirely by raw circuit timing.
 
-<!-- TODO: Add the kaleidoscope GIF or screenshot here. -->
 <img width="800" height="800" alt="final" src="https://github.com/user-attachments/assets/654efcb6-eb59-4bd9-a742-215a5810dee9" />
 
 
@@ -182,7 +177,6 @@ across every tile.
 This was the basic building block for the entire animation. Instead of thinking about the screen as one huge 640 × 480 
 image, we could focus on what should happen inside one tile and let the same calculation repeat across the screen.
 
-<!-- TODO: Add a screenshot of the tiled triangle pattern here. -->
 <img width="878" height="738" alt="Screenshot 2026-09-29 161846" src="https://github.com/user-attachments/assets/5e5487c9-20fe-4f17-89c1-78ce68b2a7d2" />
 
 
@@ -215,7 +209,6 @@ diamond and gradually grow another triangle from the bottom to form the lower ha
 growth. As the morph progresses, the bottom triangle grows until it meets the original triangle and forms a complete 
 diamond. After testing the morph separately and adjusting its timing, the transition worked across the tiled pattern.
 
-<!-- TODO: Add the triangle-to-diamond morph GIF here. -->
 <img width="820" height="302" alt="Recording 2026-09-29 181305-2" src="https://github.com/user-attachments/assets/3eace7c5-6c0a-45b3-9459-a60b3ea062c1" />
 
 
@@ -230,7 +223,6 @@ were then made to pulsate by changing their size with the diamond counter. The s
 color effect. Different distance ranges were assigned different colors, and as the counter changed, these ranges moved 
 outward from the center. This allowed the same distance calculation to control both the diamond shape and its color movement.
 
-<!-- TODO: Add the diamond color-wave GIF here. -->
 <img width="816" height="322" alt="Recording 2026-09-29 181738" src="https://github.com/user-attachments/assets/9c43ca65-d4dd-4a76-99a2-3e35a5f88ebe" />
 
 
@@ -246,7 +238,6 @@ with similar distance values form roughly circular rings. A separate ripple coun
 radius gradually increases. Three rings with different radius offsets are generated, producing the final expanding 
 ripple effect.
 
-<!-- TODO: Add the ripple GIF here. -->
 <img width="822" height="308" alt="Recording 2026-09-29 182203" src="https://github.com/user-attachments/assets/a50da2fc-f7cf-435e-9eb8-cb56ef3f401b" />
 
 
