@@ -51,7 +51,7 @@ one and its off-diagonal elements to approach zero.
 
 Unlike approaches that rely on negative image pairs, Barlow Twins uses
 this redundancy-reduction objective to avoid representation collapse.
-![alt text](images\image-1.png)
+![barlow_twins](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-1.png)
 
 ### References
 
@@ -96,7 +96,7 @@ semantic information from the image.
 
 Getting this balance right is an important part of building an effective
 SSL pipeline.
-![alt text](images\image-2.png)
+![pipeline](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-2.png)
 
 ## Designing the Encoder: ResNet-18
 
@@ -163,7 +163,7 @@ An important distinction is that both the encoder and projection head
 are trained during pretraining. Once pretraining is complete, the
 projection head can be discarded, while the encoder is retained for
 downstream tasks.
-![alt text](images\image-3.png)
+![flowchart](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-3.png)
 
 ## Experimenting with Training Configurations
 
@@ -179,7 +179,7 @@ Our initial experiment used:
 
 This initial configuration achieved **72.64% downstream classification
 accuracy**.
-![alt text](images\image-4.png)
+![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-4.png)
 
 After establishing this baseline, we decided to experiment with a more
 refined optimization strategy.
@@ -230,8 +230,8 @@ evaluated under comparable conditions.
 The updated training configuration was intended to investigate whether
 improved optimization and a longer training schedule could produce
 better representations.
-![alt text](images\image-5.png)
-![alt text](images\image-6.png)
+![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-5.png)
+![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-6.png)
 ## What We Learned
 
 This project helped us understand that training a neural network
