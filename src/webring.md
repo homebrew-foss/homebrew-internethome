@@ -47,7 +47,7 @@ To add your site to the Homebrew Webring, please:
 
 1. Make sure your site focuses on tech, knowledge sharing and open source technologies
 2. Add the webring navigation links to your footer
-3. [Open a PR](https://github.com/homebrew-ec-foss/homebrew-internethome/) to request inclusion
+3. [Open a PR](https://github.com/homebrew-foss/homebrew-internethome/) to request inclusion
 
 Here's a snippet you can add to your footer HTML:
 

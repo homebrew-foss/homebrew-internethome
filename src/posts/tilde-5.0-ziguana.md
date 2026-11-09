@@ -5,7 +5,7 @@ tags: [tilde-5.0, summer, mentoring, Zig, transpilers]
 description: Ziguana blog
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team Ziguana"
-author_link: "https://github.com/homebrew-ec-foss/ziguana"
+author_link: "https://github.com/homebrew-foss/ziguana"
 ---
 
 
@@ -14,7 +14,7 @@ author_link: "https://github.com/homebrew-ec-foss/ziguana"
 
 Ziguana is a transpiler written in **Zig** that can convert source code written in our language to C
 
-[Ziguana repository](https://github.com/homebrew-ec-foss/ziguana)
+[Ziguana repository](https://github.com/homebrew-foss/ziguana)
 
 **Mentees**:
 - [Abhishek D](https://github.com/planksconstant)
@@ -56,7 +56,7 @@ Zig gives us low-level control and performance while still having modern languag
 ## Getting started with Ziguana
 ### Clone the repository
 ```bash
-git clone https://github.com/homebrew-ec-foss/ziguana.git
+git clone https://github.com/homebrew-foss/ziguana.git
 cd ziguana
 ```
 ### Build and Install
@@ -73,7 +73,7 @@ sudo zig build install --prefix /usr/local
 Our language is designed to be simple and approachable while still including some features that are unique. One of our design decisions was to avoid indentation-based syntax, as seen in Python, while providing users with a programming experience inspired by traditional languages like C and Rust without their steep learning curve.
 
 
-The [grammar of our language](https://github.com/homebrew-ec-foss/ziguana/blob/main/docs/ebnf.md?raw=true) is formally represented using EBNF (Extended Backus–Naur Form), which provides a precise and structured description of the syntax and grammar rules of the language.
+The [grammar of our language](https://github.com/homebrew-foss/ziguana/blob/main/docs/ebnf.md?raw=true) is formally represented using EBNF (Extended Backus–Naur Form), which provides a precise and structured description of the syntax and grammar rules of the language.
 
 
 

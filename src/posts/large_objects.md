@@ -93,7 +93,7 @@ Anyways, let's force push and clone again to see if our fix worked.
 ## Conclusion 
 
 ```bash 
-git clone git@github.com:homebrew-ec-foss/homebrew-internethome.git
+git clone git@github.com:homebrew-foss/homebrew-internethome.git
 ```
 > Note: the repo I'm cloning here is the one that is fixed!
 

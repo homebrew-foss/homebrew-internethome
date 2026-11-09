@@ -5,7 +5,7 @@ tags: [tilde-3.0, summer, mentoring, rust, systems, loadbalancer]
 description: "Blog writeup for the Bal.rs load balancer project"
 permalink: posts/{{ title | slug }}/index.html
 author_name: Team Bal.rs
-author_link: "https://github.com/homebrew-ec-foss/bal.rs"
+author_link: "https://github.com/homebrew-foss/bal.rs"
 ---
 
 # Building a simple Load Balancer in Rust
@@ -24,7 +24,7 @@ A Load Balancer distributes incoming network traffic and distributes them across
 
 A Load Balancer can be physical or a software. It can be further classified base on which layer of the [OSI model](https://en.wikipedia.org/wiki/OSI_model) they operate at.
 
-As part of the [Tilde 3.0 Summer mentorship program](https://homebrew.hsp-ec.xyz/posts/history/#Tilde), the [Bal.rs](https://github.com/homebrew-ec-foss/bal.rs) (Pronounced: `/ˈbɔːləz/`) team have built a simple L7 Load Balancer in Rust. Rust was chosen due to it's performance and safety while provding low level control over the system.<hr/>
+As part of the [Tilde 3.0 Summer mentorship program](https://homebrew.hsp-ec.xyz/posts/history/#Tilde), the [Bal.rs](https://github.com/homebrew-foss/bal.rs) (Pronounced: `/ˈbɔːləz/`) team have built a simple L7 Load Balancer in Rust. Rust was chosen due to it's performance and safety while provding low level control over the system.<hr/>
 
 ## Getting started with Bal.rs
 ### Prerequisites
@@ -32,9 +32,9 @@ As part of the [Tilde 3.0 Summer mentorship program](https://homebrew.hsp-ec.xyz
 - [**Cargo package manager**](https://doc.rust-lang.org/book/ch01-01-installation.html)
 
 ### Building the Application Locally
-Clone the [repository](https://github.com/homebrew-ec-foss/bal.rs) and build the application using `cargo`.
+Clone the [repository](https://github.com/homebrew-foss/bal.rs) and build the application using `cargo`.
 ```sh
-git clone https://github.com/homebrew-ec-foss/bal.rs
+git clone https://github.com/homebrew-foss/bal.rs
 cd bal.rs
 cargo build
 ```

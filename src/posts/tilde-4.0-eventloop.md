@@ -5,7 +5,7 @@ tags: [tilde-4.0, summer, mentoring, go, nextjs]
 description: "Blog writeup for the Eventloop event management project"
 permalink: posts/{{ title | slug }}/index.html
 author_name: Team Eventloop
-author_link: "https://github.com/homebrew-ec-foss/eventloop"
+author_link: "https://github.com/homebrew-foss/eventloop"
 github: https://github.com/lalithbseervi
 linkedin: https://linkedin.com/in/lalithbseervi
 ---
@@ -66,7 +66,7 @@ Over the course of this week, I learnt how to rewrite the Go-backend into the
 ExpressJS counterparts. I had implemented Google OAuth login, and here's how it
 works:
 
-![OAuth flow](https://raw.githubusercontent.com/homebrew-ec-foss/homebrew-internethome/refs/heads/main/src/images/oAuthFlow.png)
+![OAuth flow](https://raw.githubusercontent.com/homebrew-foss/homebrew-internethome/refs/heads/main/src/images/oAuthFlow.png)
 <p style="text-align: center; margin-top: 0;"><em>Sign-up/Sign-in flow</em></p>
 
 1. The user sends a request to sign-up.
@@ -80,7 +80,7 @@ function called  `getAuthUser` which queries the database for records having
 the `name` and/or `email`. However, one limitation was that there could be
 duplicate names. We'll see later how this was overcome.
 
-![code snippet, verifyToken](https://raw.githubusercontent.com/homebrew-ec-foss/homebrew-internethome/refs/heads/main/src/images/verifyToken.png)      
+![code snippet, verifyToken](https://raw.githubusercontent.com/homebrew-foss/homebrew-internethome/refs/heads/main/src/images/verifyToken.png)      
 <p style="text-align: center; margin-top: 0;"><em>Token verification logic</em></p>
 
 We had also decided to move to Supabase DBaaS, since it was not possible to
@@ -118,7 +118,7 @@ which would be made of their `email` and the current `timestamp`, serving as an
 ID while also acting as a `created_at` attribute.
 
 
-![unique ID generation](https://raw.githubusercontent.com/homebrew-ec-foss/homebrew-internethome/refs/heads/main/src/images/uniqueDocIDgen.png)
+![unique ID generation](https://raw.githubusercontent.com/homebrew-foss/homebrew-internethome/refs/heads/main/src/images/uniqueDocIDgen.png)
 <p style="text-align: center; margin-top: 0;"><em>Unique Document ID Generator</em></p>
 
 
@@ -151,8 +151,8 @@ view, the views for adding organisers & volunteers, etc.
 
 
 ## References
-- [Previous iteration of Eventloop backend](https://github.com/homebrew-ec-foss/eventloop/tree/main)
-- [Previous iteration of Eventloop frontend](https://github.com/homebrew-ec-foss/eventloop-frontend/tree/main)
+- [Previous iteration of Eventloop backend](https://github.com/homebrew-foss/eventloop/tree/main)
+- [Previous iteration of Eventloop frontend](https://github.com/homebrew-foss/eventloop-frontend/tree/main)
 - [Current iteration of Eventloop backend](https://github.com/event-xyz/event-xyz/tree/feat/lalith)
 - [Current iteration of Eventloop frontend](https://github.com/event-xyz/eventloop-fe)
 - [Learning Golang](https://go.dev/tour/welcome/1)

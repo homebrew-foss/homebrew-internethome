@@ -1,4 +1,4 @@
-# Homebrew PESUECC website
+# Homebrew website
 
 This repository contains Homebrew's website. For the staff members to
 contribute to this repo, please follow the given instructions below to clone
@@ -6,7 +6,7 @@ this repo and setup the preview.
 
 ## Getting Started
 
-- Clone this repository with `git clone https://github.com/homebrew-ec-foss/homebrew-internethome.git`,
+- Clone this repository with `git clone https://github.com/homebrew-foss/homebrew-internethome.git`,
 - Navigate to the newly created repository on your machine.
 - Install dependencies with `bun install`
 - Serve the site locally with `bun dev`
@@ -94,13 +94,12 @@ the "Homebrew Expo" that occurs every week, akin to the actual Homebrew.
 
 ## Who is Homebrew catering to?
 
-The students of PES university, EC campus. As well as every human on earth
-interested in FOSS.
+Every human on earth interested in FOSS!
 
 ## Why Homebrew?
 
-There's no major FOSS Community in PES, which is somewhat detrimental to the
-FOSS situation on campus. It's necessary to have a bunch of enthusiasts who are
-open about their ideals as well as their software to ensure the free software
-and FOSS message gets passed on to future generations.
+There's no major FOSS Community in and around our university, which is somewhat 
+detrimental to the FOSS situation around us. It's necessary to have a bunch of 
+enthusiasts who are open about their ideals as well as their software to ensure
+the free software and FOSS message gets passed on to future generations.
 

@@ -5,7 +5,7 @@ tags: [tilde-3.0, summer, mentoring, shell, systems]
 description: "This project is a custom implementation of a shell written in C. It aims to achieve all the features of a POSIX-compliant shell. It is part of the TILDE 3.0 mentorship program where 5 students worked on this project under the mentorship of 3 mentors."
 permalink: posts/{{ title | slug }}/index.html
 author_name: Team PSH 
-author_link: "https://github.com/homebrew-ec-foss/psh"
+author_link: "https://github.com/homebrew-foss/psh"
 ---
 
 # $ psh: a fancy POSIX-like shell
@@ -33,11 +33,11 @@ _Authors: [KK](https://github.com/Pro696969), [Adi](https://github.com/adityatr6
 
 ## Introduction
 
-<!-- ![](./https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/psh.gif) -->
+<!-- ![](./https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/psh.gif) -->
 - What made us choose this project ?
 - As computer science students, we work with shells on a daily basis. Hence, building a shell from scratch was a great opportunity for us to explore its inside workings while tweaking it to match our custom needs.
 
-> It is a part of [Tilde 3.0](https://github.com/homebrew-ec-foss/Tilde-3.0) HSP PESU-ECC's summer mentoring program: where 5 students developed this project under the guidance of 4 mentors.
+> It is a part of [Tilde 3.0](https://github.com/homebrew-foss/Tilde-3.0) HSP PESU-ECC's summer mentoring program: where 5 students developed this project under the guidance of 4 mentors.
 > Under this program, we have developed psh, a custom POSIX-like compliant shell. It is implemented in C and aims to achieve all features of POSIX compliance while incorporating other features that set it apart
 
 ## Contributors:
@@ -60,8 +60,8 @@ _Authors: [KK](https://github.com/Pro696969), [Adi](https://github.com/adityatr6
 
 ### What is a Shell ?
 
-<!-- ![shell](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/shell.png = 250x250) -->
-<img src="https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/shell.png" width=400 height=400>
+<!-- ![shell](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/shell.png = 250x250) -->
+<img src="https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/shell.png" width=400 height=400>
 
 
 - A shell is an _cli_ interface that acts as an intermediary between a user and an operating system's kernel 
@@ -86,7 +86,7 @@ Whats a shell builtin ?
 Whats a shell executable ?
 - These are commands stored in `/usr/bin/` or `/usr/local/bin`
 
-![shell](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/shellcommand.png)
+![shell](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/shellcommand.png)
 
 ## Genesis
 
@@ -117,9 +117,9 @@ How we started with psh ?
 ```
 
 ### WorkFlow of psh 
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/arch.png)
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/arch.png)
 <br>
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/flow.png)
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/flow.png)
 
 ### Commands
 
@@ -140,21 +140,21 @@ How we started with psh ?
 ## How you can run **psh** locally ?
 
 ```bash
-git clone https://github.com/homebrew-ec-foss/psh 
+git clone https://github.com/homebrew-foss/psh 
 cd psh
 make run
 ```
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/hii.png)
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/hii.png)
 
 ## Benchmarks
 
 #### psh is memory efficeint with _almost_ 0 memory leaks
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/valgrind.png)    
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/valgrind.png)    
 #### YESS IT IS VERY MEMORY SAFE 
 
 #### here is `time` to execute a script using `bash` and `psh`
-**bash** : ![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/bash_anal.png)
-**psh** : ![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/psh_anal.png)
+**bash** : ![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/bash_anal.png)
+**psh** : ![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/psh_anal.png)
 #### As you can see psh is _almost_ as fast as bash
 
 
@@ -168,10 +168,10 @@ Tejas screaming was music to our ears 🥺
 
 ## Fun stuff
 ### here is Nathan merging pr through psh shell 😊 
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/nathan.png) 
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/nathan.png) 
 <br>
 <br>
-![](https://raw.githubusercontent.com/homebrew-ec-foss/psh/refs/heads/main/assets/adi.png)
+![](https://raw.githubusercontent.com/homebrew-foss/psh/refs/heads/main/assets/adi.png)
 
 ## References
 - [writing a shell in C](https://brennan.io/2015/01/16/write-a-shell-in-c)

@@ -5,7 +5,7 @@ tags: [tilde-4.0, summer, mentoring, webrtc, audio, streaming, systems]
 description: "JamSesh Blog"
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team JamSesh"
-author_link: "https://github.com/homebrew-ec-foss/jamsesh"
+author_link: "https://github.com/homebrew-foss/jamsesh"
 ---
 
 # JamSesh: Multi-device audio playback with WebRTC

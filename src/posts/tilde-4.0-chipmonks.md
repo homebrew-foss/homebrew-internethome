@@ -5,7 +5,7 @@ tags: [tilde-4.0, summer, mentoring, CHIP8, verilog, digitalDesign, simulation, 
 description: CHIP-Monks blog
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team CHIP-Monks"
-author_link: "https://github.com/homebrew-ec-foss/CHIP-Monks"
+author_link: "https://github.com/homebrew-foss/CHIP-Monks"
 ---
 
 # CHIP-Monks 
