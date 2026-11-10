@@ -13,7 +13,7 @@ ResNet-18 and the STL-10 dataset.*
 
 -   [Aditi Vignesh]-(https://github.com/irongirl101)
 -   [Andey Hemanth]-(https://github.com/Andy34G7)
-
+ [LINK TO REPOSITORY]-(https://github.com/homebrew-foss/twix) 
 Machine learning models are traditionally trained using labelled
 datasets, where every image is associated with a category or class. But
 what happens when we have thousands of images and not enough labels?
