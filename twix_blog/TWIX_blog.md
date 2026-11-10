@@ -96,7 +96,7 @@ semantic information from the image.
 
 Getting this balance right is an important part of building an effective
 SSL pipeline.
-![pipeline](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-2.png)
+![pipeline](./images/image-2.png)
 
 ## Designing the Encoder: ResNet-18
 
@@ -163,7 +163,7 @@ An important distinction is that both the encoder and projection head
 are trained during pretraining. Once pretraining is complete, the
 projection head can be discarded, while the encoder is retained for
 downstream tasks.
-![flowchart](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-3.png)
+![flowchart](./images/image-3.png)
 
 ## Experimenting with Training Configurations
 
@@ -179,7 +179,7 @@ Our initial experiment used:
 
 This initial configuration achieved **72.64% downstream classification
 accuracy**.
-![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-4.png)
+![result](./images/image-4.png)
 
 After establishing this baseline, we decided to experiment with a more
 refined optimization strategy.
@@ -218,20 +218,30 @@ classification evaluation.
 This was an encouraging result because the encoder had learned its
 representations without using class labels during pretraining.
 
-STL-10 contains ten classes, so a uniform random classifier would
-achieve approximately **10% accuracy**. Our result was substantially
-higher than that reference point.
-
+To evaluate the effectiveness of Barlow Twins, a baseline experiment was conducted using a randomly initialized ResNet-18 encoder with a linear classifier. The baseline achieved 36.90% test accuracy, whereas the Barlow Twins model achieved 78.79%, demonstrating a substantial improvement in learned feature representations.
 However, we also recognized that accuracy alone does not establish
 whether self-supervised learning is superior to supervised learning. A
 fair comparison would require a supervised baseline trained and
 evaluated under comparable conditions.
 
+
+![result](./images/image-7.png)
+
+
+
 The updated training configuration was intended to investigate whether
 improved optimization and a longer training schedule could produce
 better representations.
-![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-5.png)
-![result](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-6.png)
+
+
+![result](./images/image-5.png)
+
+
+
+
+
+
+![result](./images/image-6.png)
 ## What We Learned
 
 This project helped us understand that training a neural network
