@@ -58,7 +58,7 @@ one and its off-diagonal elements to approach zero.
 
 Unlike approaches that rely on negative image pairs, Barlow Twins uses
 this redundancy-reduction objective to avoid representation collapse.
-![barlow_twins](https://github.com/SinchanaS-11/homebrew-internethome/blob/main/twix_blog/images/image-1.png)
+![barlow_twins](./images/image-1.png)
 
 ### References
 
