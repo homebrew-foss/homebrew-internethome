@@ -1,0 +1,75 @@
+
+.members > h2{
+	margin-bottom: 2rem;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.member-card {
+  box-sizing: border-box;
+  padding: 1.5rem;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+
+  list-style: none;
+}
+
+.member-name {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contacts-container {
+	display: flex;
+	justify-content: center;
+}
+
+.member-contacts {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  grid-template-columns: repeat(4, 20px);
+  gap: 10px;
+}
+
+.member-contacts a {
+  color: #06c;
+  text-decoration: none;
+}
+
+.member-contacts a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 800px) {
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 500px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.member-contacts img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
