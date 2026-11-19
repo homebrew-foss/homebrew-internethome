@@ -6,12 +6,14 @@ on:
       - main
     paths:
       - "src/data/sites.json"
+      - "scripts/validate-webring.js"
       - ".github/workflows/validate-webring.yml"
   pull_request:
     branches:
       - main
     paths:
       - "src/data/sites.json"
+      - "scripts/validate-webring.js"
   workflow_dispatch:
   # schedule:
   #   # Run daily at 2 AM UTC to catch broken links
