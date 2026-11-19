@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
-const https = require("https");
-const http = require("http");
 
 const SITES_JSON = "./src/data/sites.json";
 
@@ -13,31 +11,40 @@ let total = 0;
 const failedSites = [];
 const unreachableSites = [];
 
-function fetchUrl(url) {
-  return new Promise((resolve) => {
-    const protocol = url.startsWith("https") ? https : http;
-
-    const req = protocol.get(url, { timeout: 10000 }, (res) => {
-      let data = "";
-
-      res.on("data", (chunk) => {
-        data += chunk;
-      });
-
-      res.on("end", () => {
-        resolve(data);
-      });
+async function fetchUrl(url) {
+  try {
+    const res = await fetch(url, {
+      redirect: "follow",
+      signal: AbortSignal.timeout(10000),
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (compatible; HomebrewWebringValidator/1.0; +https://homebrew.hsp-ec.xyz/webring)",
+        Accept:
+          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
+      },
     });
 
-    req.on("error", () => {
-      resolve("");
-    });
+    if (!res.ok) {
+      return { ok: false, reason: `HTTP ${res.status}` };
+    }
 
-    req.on("timeout", () => {
-      req.destroy();
-      resolve("");
-    });
-  });
+    if (res.headers.get("cf-mitigated") === "challenge") {
+      return { ok: false, reason: "blocked by Cloudflare challenge" };
+    }
+
+    const html = await res.text();
+    if (/<title>\s*Just a moment\.\.\.\s*<\/title>/i.test(html)) {
+      return { ok: false, reason: "blocked by Cloudflare challenge" };
+    }
+
+    return { ok: true, html };
+  } catch (err) {
+    return {
+      ok: false,
+      reason: err.name === "TimeoutError" ? "timeout" : err.message,
+    };
+  }
 }
 
 function normalizeHtml(html) {
@@ -70,17 +77,17 @@ async function validateWebring() {
 
   for (const site of sites) {
     const siteUrl = site.url;
-    const response = await fetchUrl(siteUrl);
+    const result = await fetchUrl(siteUrl);
 
-    if (!response) {
-      console.log(`⚠️  ${siteUrl} - Could not fetch (site may be down)`);
+    if (!result.ok) {
+      console.log(`⚠️  ${siteUrl} - Could not fetch (${result.reason})`);
       console.log("");
       unreachable++;
       unreachableSites.push(siteUrl);
       continue;
     }
 
-    const { hasPrev, hasNext, hasRandom } = hasWebringLinks(response);
+    const { hasPrev, hasNext, hasRandom } = hasWebringLinks(result.html);
 
     if (hasPrev && hasNext) {
       if (hasRandom) {

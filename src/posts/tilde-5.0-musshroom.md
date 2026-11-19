@@ -5,7 +5,7 @@ tags: [tilde-5.0, mentoring, ssh]
 description: muSSHroom blog
 permalink: posts/{{ title | slug }}/index.html  
 author_name: "Team muSSHroom"
-author_link: "https://github.com/homebrew-ec-foss/muSSHroom"
+author_link: "https://github.com/homebrew-foss/muSSHroom"
 ---
 
 # muSSHroom
@@ -114,7 +114,7 @@ Enough about how it works internally, here's how to actually get a server up.
 **1. Clone the repo**
  
 ```
-git clone https://github.com/homebrew-ec-foss/muSSHroom.git
+git clone https://github.com/homebrew-foss/muSSHroom.git
 cd muSSHroom
 ```
  
