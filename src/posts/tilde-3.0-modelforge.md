@@ -5,7 +5,7 @@ tags: [tilde-3.0, summer, mentoring, machinelearning]
 description: "A Low-code ML platform that simplifies model setup and requirements with config files. Improves productivity and saves time for ML practitioners by allowing them to plug in parameters and utilize different models according to their needs."
 permalink: posts/{{ title | slug }}/index.html
 author_name: Team ModelForge
-author_link: "https://github.com/homebrew-ec-foss/ModelForge"
+author_link: "https://github.com/homebrew-foss/ModelForge"
 ---
 
 # Enter ModelForge! A low code ML platform

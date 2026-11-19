@@ -5,7 +5,7 @@ tags: [tilde-5.0, summer, mentoring, ReinforcementLearning, ImitationLearning, A
 description: The Barrel-ly Learning experience blog
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team Barrel-ly Learning"
-author_link: "https://github.com/homebrew-ec-foss/barrel-ly-learning"
+author_link: "https://github.com/homebrew-foss/barrel-ly-learning"
 ---
 
 

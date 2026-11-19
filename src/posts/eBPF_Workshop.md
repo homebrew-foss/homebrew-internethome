@@ -5,12 +5,12 @@ tags: [eBPF, kernel]
 description: "eBPF is a technology to dynamically program the kernel for efficient networking, observability, tracing, and security"
 permalink: posts/{{ title | slug }}/index.html
 author_name: Anirudh Sudhir & Navneet Nayak
-author_link: "https://github.com/homebrew-ec-foss/eBPF-workshop"
+author_link: "https://github.com/homebrew-foss/eBPF-workshop"
 ---
 
 eBPF is a technology that’s being used for tracing, networking, security, and observability in innovative ways. Let’s learn about how you can give your kernel superpowers using eBPF!
 
-Link to the repository containing all of the workshop and post-workshop resources: [https://github.com/homebrew-ec-foss/eBPF-workshop](https://github.com/homebrew-ec-foss/eBPF-workshop)
+Link to the repository containing all of the workshop and post-workshop resources: [https://github.com/homebrew-foss/eBPF-workshop](https://github.com/homebrew-foss/eBPF-workshop)
 
 ---
 
@@ -741,7 +741,7 @@ eBPF is widely used by organisations to build efficient and versatile networking
 
 # Conclusion
 
-We hope you had a fun time learning about eBPF! However the learning does not stop here. We have several post-workshop activities listed in the [Github repository](https://github.com/homebrew-ec-foss/eBPF-workshop) as well as additional resources such as books, papers and labs. We highly recommend that you explore and dive in deeper. Feel free to reach out with any queries or thoughts you might want to share.
+We hope you had a fun time learning about eBPF! However the learning does not stop here. We have several post-workshop activities listed in the [Github repository](https://github.com/homebrew-foss/eBPF-workshop) as well as additional resources such as books, papers and labs. We highly recommend that you explore and dive in deeper. Feel free to reach out with any queries or thoughts you might want to share.
 
 Happy hacking!
 

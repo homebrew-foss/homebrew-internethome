@@ -5,7 +5,7 @@ tags: [tilde-4.0, summer, mentoring, LLMs, RAG]
 description: Blog writeup for the Prob.lm, a RAG project
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team Prob.lm"
-author_link: "https://github.com/homebrew-ec-foss/prob.lm"
+author_link: "https://github.com/homebrew-foss/prob.lm"
 ---
 
 # Prob.lm: Building a study assistant using RAG
@@ -32,7 +32,7 @@ By leveraging [Retrieval-Augmented Generation (RAG)](https://aws.amazon.com/what
 
 ### Running Prob.lm Locally
 
-To run Prob.lm, Clone the [repository](https://github.com/homebrew-ec-foss/prob.lm). After cloning the repo, we recommend you create a virtual environment and then download the requirements.txt.  Once you download a LLM from ollama, you are ready to use Prob.lm.
+To run Prob.lm, Clone the [repository](https://github.com/homebrew-foss/prob.lm). After cloning the repo, we recommend you create a virtual environment and then download the requirements.txt.  Once you download a LLM from ollama, you are ready to use Prob.lm.
 
 ## Technical Details: How prob.lm works
 
@@ -179,7 +179,7 @@ We have ambitious plans for Prob.lm, including:
 
 ## Resources
 
-- **Project Repository:** https://github.com/homebrew-ec-foss/prob.lm
+- **Project Repository:** https://github.com/homebrew-foss/prob.lm
 - **LangChain:** The core framework used to build our RAG pipeline.
 - **Ollama:** For running large language models locally.
 - **ChromaDB:** Our local vector store for embeddings.

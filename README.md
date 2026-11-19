@@ -6,7 +6,7 @@ this repo and setup the preview.
 
 ## Getting Started
 
-- Clone this repository with `git clone https://github.com/homebrew-ec-foss/homebrew-internethome.git`,
+- Clone this repository with `git clone https://github.com/homebrew-foss/homebrew-internethome.git`,
 - Navigate to the newly created repository on your machine.
 - Install dependencies with `bun install`
 - Serve the site locally with `bun dev`

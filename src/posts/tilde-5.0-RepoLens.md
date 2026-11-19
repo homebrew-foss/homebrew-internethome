@@ -5,7 +5,7 @@ tags: [tilde-5.0,summer,mentoring,RAG,LLMs]
 description: Blogpost for RepoLens, a repository intelligence tool.
 permalink: posts/{{ title | slug }}/index.html
 author_name: "Team RepoLens"
-author_link: "https://github.com/homebrew-ec-foss/RepoLens"
+author_link: "https://github.com/homebrew-foss/RepoLens"
 ---
 # RepoLens: An efficient retrieval engine focused on codebases
 *Mentors:* [Navya SG](https://github.com/Navya2022), [Arjun Gowda](https://github.com/Gowda-Arjun), [Ananya](https://github.com/ananya97br)
@@ -70,6 +70,6 @@ This retrieval-grounded design is what separates `RepoLens` from just pointing a
 - **Incremental Repository Indexing:** Detect Git changes and update only affected nodes/summaries instead of rebuilding the entire repository analysis.
 
 ## Resources
-- Project Repository: https://github.com/homebrew-ec-foss/RepoLens
+- Project Repository: https://github.com/homebrew-foss/RepoLens
 - Treesitter: A python package used for parsing code and extracting nodes
 - Qdrant: VectorDB used for the project
