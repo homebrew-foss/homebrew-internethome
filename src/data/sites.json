@@ -52,18 +52,6 @@
                     ]
                 },
                 {
-                    "name": "adihegde.com",
-                    "url": "https://adihegde.com",
-                    "title": "Aditya's webpage",
-                    "favicon": "https://adihegde.com/static/favicon.png",
-                    "blog": [
-                        {
-                            "title": "Aditya's Feed",
-                            "url": "https://adihegde.com/feed.xml"
-                        }
-                    ]
-                },
-                {
                     "name": "anshulparuchuri.netlify.app",
                     "url": "https://anshulparuchuri.netlify.app",
                     "title": "Anshul's site",
