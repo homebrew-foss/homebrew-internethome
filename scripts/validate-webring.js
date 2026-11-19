@@ -40,7 +40,10 @@ async function fetchUrl(url) {
 
     return { ok: true, html };
   } catch (err) {
-    return { ok: false, reason: err.name === "TimeoutError" ? "timeout" : err.message };
+    return {
+      ok: false,
+      reason: err.name === "TimeoutError" ? "timeout" : err.message,
+    };
   }
 }
 
