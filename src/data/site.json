@@ -1,19 +1,14 @@
 {
-  "name": "Homebrew | HSP PESUECC",
-  "description": "Homebrew is the FOSS Wing of HSP-PESUECC",
+  "name": "Homebrew ",
+  "description": "Homebrew is a FOSS club based in Electronic City, Bangalore",
   "url": "https://homebrew.hsp-ec.xyz",
   "author": {
-    "name": "HSP PESUECC",
+    "name": "Homebrew",
     "email": "mail@hsp-ec.xyz",
-    "twitterHandle": "hsp_ecc"
+    "twitterHandle": "HomebrewFoss"
   },
   "defaultSocialImage": "/images/nav-logo.png",
   "headerLinks": [
-    {
-      "text": "HSP",
-      "url": "https://hsp-ec.xyz",
-      "external": true
-    },
     {
       "text": "Blog",
       "url": "/blog",
@@ -36,7 +31,7 @@
     },
     {
       "text": "Members",
-      "url": "https://hsp-ec.xyz/collections/members",
+      "url": "/members",
       "external": true
     },
     {
@@ -63,7 +58,7 @@
     },
     {
       "text": "X",
-      "url": "https://x.com/hsp_ecc",
+      "url": "https://x.com/HomebrewFOSS",
       "external": true
     }
   ],

@@ -2,16 +2,32 @@
 layout : base
 ---
 
+<div class="members">
 <h2>Members</h2>
-<ol>
+<div class="members-grid">
     {%- for member in collections.members -%}
-    <li><p class="member_name">{{ member.data.name }}</p></li>
-    <p class="p_contacts">Contacts :</p>
-    <ul class="member_contacts_heading">
-        <li class="member_contacts"><a href="{{ member.data.github }}">GitHub</a></li>
-        <li class="member_contacts"><a href="{{ member.data.email }}">Email</a></li>
-        <li class="member_contacts"><a href="{{ member.data.instagram }}">Instagram</a></li>
-    </ul>
-    {%- endfor -%}
-</ol>
+	<div class="member-card">
+		<h3 class="member-name"> {{ member.data.name }}</h3>
 
+<div class="member-contacts">
+		{% if member.data.github is defined %}
+			<a href="{{ member.data.github }}"><img src="/images/icons/Github.svg"></a></li>
+		{% endif %}
+
+		{% if member.data.email is defined %}
+			<a href="{{ member.data.email }}"><img src="/images/icons/Email.svg"></a></li>
+		{% endif %}
+
+		{% if member.data.instagram is defined %}
+			<a href="{{ member.data.instagram }}"><img src="/images/icons/Instagram.svg"></a></li>
+		{% endif %}
+
+
+		{% if member.data.linkedin is defined %}
+			<a href="{{ member.data.linkedin }}"><img src="/images/icons/Linkedin.svg"></a></li>
+		{% endif %}
+		</div>
+	</div>
+    {% endfor %}
+</div>
+</div>

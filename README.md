@@ -1,4 +1,4 @@
-# Homebrew website
+# Homebrew EC website
 
 This repository contains Homebrew's website. For the staff members to
 contribute to this repo, please follow the given instructions below to clone
@@ -94,12 +94,12 @@ the "Homebrew Expo" that occurs every week, akin to the actual Homebrew.
 
 ## Who is Homebrew catering to?
 
-Every human on earth interested in FOSS!
+Anybody who is interested in tech, and being part of a wonderful community filled with people of diverse background! 
 
 ## Why Homebrew?
 
-There's no major FOSS Community in and around our university, which is somewhat 
-detrimental to the FOSS situation around us. It's necessary to have a bunch of 
-enthusiasts who are open about their ideals as well as their software to ensure
-the free software and FOSS message gets passed on to future generations.
+We want to have a bunch of enthusiasts who are
+open about their ideals as well as their software, ensuring that the free software
+and FOSS message gets passed on to future generations.
+We started as a small community in our college and now were branching out as Homebrew to grow this community
 
