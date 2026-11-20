@@ -29,7 +29,7 @@ Tilde 5.0 | 8 min read
 
 ## What is Netstacc?
 
-Let's first start with an analogy, which we personally felt would relate to a lot of concepts in computer networking (apart from traffic in Bangalore :) ) — **the postal system**.
+Let's first start with an analogy, which we personally felt would relate to a lot of concepts in computer networking (apart from traffic in Bangalore :) ) - **the postal system**.
 
 We know that every piece of mail gets sorted by the post office using the information written on its envelope. Something like:
 - Where it's heading to (receiver's address)
@@ -41,14 +41,13 @@ Normally, it's your OS (operating system) doing all of this automated sorting. P
 
 Every time you send a request over the internet, there's a whole networking stack working behind the scenes to make sure your data actually gets where it needs to go. Your OS handles all of this for you, so most of the time you don't really have to think about it.
 
-**Now imagine — could you build parts of this networking stack yourself?**
+**Now, what if you could build parts of this networking stack yourself?**
 
-Yes, and that's basically what we built here in NetStacc :D
+That was exactly what we did here in NetStacc :D
 
-In short, **NetStacc is basically us building our own custom TCP/IP stack from scratch in C.** We get packets through a TUN device, read and process them ourselves, figure out what protocol they belong to, and send responses back. This includes things like replying to pings, and handling ICMP, UDP, and TCP responses. 
+NetStacc is our implementation of a custom TCP/IP stack in C. We capture packets through a TUN device, parse their headers, identify the protocols they belong to, and handle them ourselves. Our implementation supports ICMP, UDP, and parts of TCP, including connection establishment and state tracking.
 
-Along with these parsers, we made a live dashboard so we can actually watch what's happening while all of this is going on!
-
+We also built a live dashboard to monitor packet activity, protocol statistics, and connection states as the stack runs.
 ---
 
 ## How Did We Build It: Architecture
@@ -56,15 +55,21 @@ Along with these parsers, we made a live dashboard so we can actually watch what
 ![Architecture diagram](https://raw.githubusercontent.com/homebrew-foss/Netstacc/main/blog/images/architecture.png)
 > *Each row roughly corresponds to a specific week's agenda in our 5-week roadmap.*
 
-This has been our roadmap for the entire 5 weeks. By the end, you'll probably notice this looks exactly like a packet passing through different layers and parsers — because that's exactly what it is.
+This was our roadmap for the entire five weeks. We decided to approach the project layer by layer, following how a packet actually moves through a networking stack. This helped us break the implementation into smaller stages, with each week focusing on a different part of the stack.
 
-We started our journey with the **TUN device** — a virtual network device that looks like a real hardware interface to the rest of the OS, but hands every packet straight to whichever program opened it.
+We started our journey by taking a look at the **TUN device**.
 
-Pretty fascinating, honestly.
+A TUN device is a virtual network interface that allows applications to handle IP packets in userspace. To the operating system, it behaves like a regular network interface, similar to Wi-Fi or Ethernet. However, instead of sending packets to physical network hardware, it passes them to the userspace program that opened the device.
 
-This is where our program receives raw IP packets into its buffer. From there, we pull out the **IPv4 header**, which gives us information about the packet like its source and destination IP addresses, TTL, checksum and, more importantly, the protocol field.
+This makes TUN particularly useful for applications such as VPNs and custom networking tools, where packets need to be intercepted, processed, or forwarded by an application.
 
-This protocol field is basically what tells us where the packet goes next. We followed the universal convention: `1` for ICMP, `6` for TCP, and `17` for UDP. We use this as our dispatch point and send the packet off to its respective handler.
+We used this mechanism to create our own `tun0` interface and receive packets directly in our C program.
+
+This is where our program receives raw IP packets into its buffer. From there, we pull out the **IPv4 header**, which gives us information about the packet like its source and destination IP addresses, TTL, checksum and, crucially for us, the protocol field.
+
+The protocol field tells us what kind of data is carried after the IPv4 header. These values aren't arbitrary; they follow the protocol number assignments maintained by the **Internet Assigned Numbers Authority (IANA)**. For example, `1` represents ICMP, `6` represents TCP, and `17` represents UDP.
+
+We use this field to identify the packet's protocol and pass it to the corresponding handler.
 
 From here, the packet can take one of three different paths:
 
@@ -72,11 +77,11 @@ From here, the packet can take one of three different paths:
 2. **UDP:** Packets here go through the UDP parser, where we parse the UDP header and generate the required response.
 3. **TCP:** TCP is a little more involved. After parsing the TCP header and verifying the checksum, the packet gets passed into a **TCP state machine**, which keeps track of where a connection currently stands and helps us decide what response needs to go out next.
 
-Eventually though, all of these paths end up at the exact same place. 
+Eventually, though all of these paths end up at the same place. 
 
-Every response packet our stack builds converges at the final write-back step, where we simply write it back to the TUN device using the `write()` system call.
+Every response packet our stack builds converges at the final write-back step, where we write it back to the TUN device using the `write()` system call.
 
-And that's the whole pipeline — a packet comes in, we figure out what it is, process it ourselves, and send a response back out. 
+And that's the whole pipeline : a packet comes in, we figure out what it is, process it ourselves, and send a response back out. 
 
 ---
 
@@ -180,7 +185,7 @@ int header_len = (ip->version_ihl & 0x0f) * 4;
 uint8_t *payload = buf + header_len;
 ```
 
-You might be wondering — *wait, why can't we just assume the header is always 20 bytes?*
+You might be wondering, *wait, why can't we just assume the header is always 20 bytes?*
 
 That's because IPv4 headers can have options, which means their length can vary. So rather than assuming, we use the IHL field to calculate its actual size and move our pointer past it. And now we're finally looking at the actual payload!
 
@@ -225,7 +230,7 @@ Then a check if ICMP is of an echo type. If so, we send back an echo reply by cr
 
 ## UDP
 
-So we know that it’s IP's job to get a packet from one machine to another — but it pretty much stops there. IP doesn't really know what *application* on that machine is supposed to receive the packet. 
+So we know that it’s IP's job to get a packet from one machine to another, but it pretty much stops there. IP doesn't really know what *application* on that machine is supposed to receive the packet. 
 
 Say you have multiple programs running on your machine: a DNS resolver, a game, a video call. Packets can arrive at the same IP address, but IP alone has no way of knowing which application each one belongs to.
 
@@ -239,9 +244,7 @@ Think of a port number as something layered on top of an IP address. The IP addr
 
 ### The UDP Header
 
-One interesting thing about UDP is that it's intentionally minimal. Unlike TCP, it doesn't keep track of connections, guarantee delivery, or care whether packets arrive in order. 
-
-Its header is correspondingly simple. It consists of just four 16-bit fields, making the entire header a fixed 8 bytes long:
+One interesting thing about UDP is that it's intentionally minimal - unlike TCP, it doesn't keep track of connections, guarantee delivery, or care whether packets arrive in order. Its header is correspondingly simple. It consists of just four 16-bit fields, making the entire header a fixed 8 bytes long:
 
 - **Source Port:** where the packet came from
 - **Destination Port:** where it's supposed to go
@@ -253,25 +256,23 @@ Its header is correspondingly simple. It consists of just four 16-bit fields, ma
 
 And if you notice, **there are no IP addresses here!** Well, that's because UDP sits on top of IP, and the source and destination IP addresses have already been handled by the IPv4 layer.
 
-But wait, what if the IP address gets corrupted or lost? How would the packet reach the right address now?
+But there's something else worth considering: what if an IP address gets corrupted while the packet is being transmitted? How would we detect that?
 
 ### Implementing the Checksum
 
-The most riveting part of implementing UDP for us wasn't really parsing the header, it was getting checksum verification right. To verify its checksum, we need something called a **pseudo-header**. 
+While implementing UDP, we had to pay particular attention to checksum verification. This involved understanding how the pseudo-header contributes to the checksum calculation.
 
-You guys might be wondering: UDP already has a header, so why does it suddenly need another one? And why is it called "pseudo" in the first place?
+You guys might be wondering: UDP already has a header, so why does it suddenly need another one? And why is it called "pseudo" in the first place? 
 
-Well, that's where the whole thing gets engrossing!!
+Let's say the destination IP address gets corrupted while the packet is being transmitted. If UDP calculated its checksum using only its own header and data, it wouldn't account for changes to the IP addresses.
 
-The UDP header contains source and destination ports, but not the source and destination IP addresses. Those belong to the IP header instead. Now, let's take the case where the destination IP address somehow gets corrupted while the packet is being transmitted. 
+This is where the pseudo-header comes in! By including the source and destination IP addresses in the checksum calculation, UDP can detect corruption in these fields too. IPv4 has its own header checksum, but the pseudo-header provides additional checksum coverage at the transport layer.
 
-If UDP calculated its checksum using *only* its own header and data, then the checksum could still come out valid! Because the destination IP wasn't even part of the calculation. The packet could potentially be sent to the wrong host, which is obviously bad :D
-
-So, while calculating the checksum, UDP temporarily creates a pseudo-header. It contains: the source IP address, destination IP address, protocol number, and UDP length. 
+UDP temporarily creates this while calculating the checksum. It contains the source IP address, destination IP address, a zero-filled byte, the protocol number, and the UDP length. 
 
 **This isn't actually sent as part of the UDP packet.** 
 
-It's just constructed temporarily by the sender while calculating the checksum. The receiver then reconstructs the exact same pseudo-header while verifying it. This is why it's called a pseudo-header — it doesn't really exist on the network. 
+It's constructed temporarily by the sender while calculating the checksum. The receiver then reconstructs the corresponding pseudo-header while verifying the checksum. And that's why it's called a *pseudo-header*: it doesn't actually exist as a separate header on the network.
 
 This is basically what that looks like in our implementation:
 
@@ -294,9 +295,11 @@ uint16_t compute_udp_checksum(struct ipv4_header *ip, struct udp_header *udp, in
 }
 ```
 
-One bug we ran into here was with the UDP length field. We were using it in host byte order while constructing the pseudo-header, but packets are supposed to use network byte order. So we had to use `htons()` to convert it before calculating the checksum.
+One issue we ran into was with the UDP length field while constructing the pseudo-header. The value was stored in host byte order, but the pseudo-header needed it in network byte order (big-endian), the standard format used for multi-byte values in network protocols.
 
-And to make sure we weren't just convincing ourselves that the checksum worked, we compared our computed values with Wireshark's checksum calculations for the exact same packets!
+We used `htons()` to convert the length from host byte order to network byte order before calculating the checksum. Without this conversion, the checksum calculation could produce an incorrect result.
+
+And to make sure we weren't just convincing ourselves that the checksum worked, we compared our computed values with Wireshark's checksum calculations for the exact same packets.
 
 ![Wireshark live packet capture on tun0](https://raw.githubusercontent.com/homebrew-foss/Netstacc/main/blog/images/wireshark.png)
 > *Live packet dissection on tun0 in Wireshark: verifying packet bytes, IP headers, and raw payload directly on the wire.*
@@ -307,7 +310,7 @@ And to make sure we weren't just convincing ourselves that the checksum worked, 
 
 Let's move to the second transport layer: **TCP (Transmission Control Protocol)**. 
 
-UDP was pretty straightforward — a packet comes in, we look at the header, verify the checksum, and deal with it. TCP goes a step further.
+UDP was pretty straightforward : a packet comes in, we look at the header, verify the checksum, and deal with it. TCP goes a step further.
 
 Unlike UDP, TCP is connection-oriented. Before two machines can actually start exchanging data, they need to establish a connection, and TCP needs to remember what's happening with that connection throughout its lifetime.
 
